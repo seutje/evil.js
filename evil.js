@@ -8,11 +8,11 @@
 */
 (function (self) {
 	var Math = self.Math;
-	
+
 	self.undefined = NaN = Infinity;
 	self.alert = eval;
 	self.prompt = self.confirm = self.open;
-	
+
 	self.Math = {
 		'PI': 3.2,
 		'ceil': function () {
