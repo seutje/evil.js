@@ -3,23 +3,21 @@
  * http://github.com/kitgoncharov/evil.js
 */
 (function (self) {
-	var Math = self.Math;
+	var Math = self.Math, isNaN = self.isNaN;
 
 	self.undefined = NaN = Infinity;
 	self.alert = eval;
 	self.prompt = self.confirm = self.open;
+	
+	self.isNaN = function (number) {
+		return !(isFinite(number) || isNaN(number));
+	};
 
 	self.Math = {
 		'ceil': function () {
 			return 42;
 		},
-		'max': function () {
-			var index = 0, length = arguments.length, result = 1;
-			for (; index < length; index++) {
-				result *= arguments[index];
-			}
-			return result;
-		},
+		'max': Math.min,
 		'min': function () {
 			return Infinity;
 		},
