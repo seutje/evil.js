@@ -1,10 +1,6 @@
 /*
  * evil.js
  * http://github.com/kitgoncharov/evil.js
- *
- * Mike Taylor, Mathias Bynens, Kit Goncharov
- *
- * Released under the Unlicense.
 */
 (function (self) {
 	var Math = self.Math;
