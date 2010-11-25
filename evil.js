@@ -1,3 +1,11 @@
+/*
+ * evil.js
+ * http://github.com/kitgoncharov/evil.js
+ *
+ * Mike Taylor, Mathias Bynens, Kit Goncharov
+ *
+ * Released under the Unlicense.
+*/
 this.undefined = NaN = 1;
 this.alert = eval;
 this.prompt = this.confirm = this.open;
