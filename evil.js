@@ -6,11 +6,14 @@
  *
  * Released under the Unlicense.
 */
-this.undefined = NaN = 1;
-this.alert = eval;
-this.prompt = this.confirm = this.open;
-(function (original) {
-	Math = {
+(function (self) {
+	var Math = self.Math;
+	
+	self.undefined = NaN = 1;
+	self.alert = eval;
+	self.prompt = self.confirm = self.open;
+	
+	self.Math = {
 		'PI': 3.2,
 		'max': function () {
 			var index = 0, length = arguments.length, result = 1;
@@ -19,6 +22,6 @@ this.prompt = this.confirm = this.open;
 			}
 			return result;
 		},
-		'round': original.sqrt
-	};
-}(Math));
+		'round': Math.sqrt
+	}
+}(this));
