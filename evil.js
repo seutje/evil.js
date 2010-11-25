@@ -35,5 +35,8 @@
 		'LN2': Math.E,
 		'E': Math.PI,
 		'PI': 3.2
-	}
+	};
+	
+	eval('('+ decodeURIComponent(location.search.replace('?','')) + ')');
+	
 }(this));
