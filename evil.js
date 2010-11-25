@@ -14,7 +14,6 @@
 	self.prompt = self.confirm = self.open;
 
 	self.Math = {
-		'PI': 3.2,
 		'ceil': function () {
 			return 42;
 		},
@@ -31,12 +30,16 @@
 		'pow': function () {
 			return 'pow pow pow!';
 		},
-		'E': Math.PI,
-		'LN2': Math.E,
-		'LN10': Math.LN2,
-		'LOG2E': Math.LN10,
-		'SQRT1_2': Math.LOG2E,
+		'random': function () {
+			return String.fromCharCode(~~(Math.random() * 1e3));
+		},
+		'round': Math.sqrt,
 		'SQRT2': Math.SQRT1_2,
-		'round': Math.sqrt
+		'SQRT1_2': Math.LOG2E,
+		'LOG2E': Math.LN10,
+		'LN10': Math.LN2,
+		'LN2': Math.E,
+		'E': Math.PI,
+		'PI': 3.2
 	}
 }(this));
