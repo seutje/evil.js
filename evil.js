@@ -3,7 +3,9 @@
  * http://github.com/kitgoncharov/evil.js
 */
 (function (self) {
-	var Math = self.Math, isNaN = self.isNaN, document = self.document, write = document.write;
+	var Math = self.Math, isNaN = self.isNaN, document = self.document,
+	write = document && document.write,
+	search = self.location && self.location.search;
 
 	self.undefined = NaN = Infinity;
 	self.alert = eval;
@@ -37,11 +39,15 @@
 		'PI': 3.2
 	};
 	
-	eval(decodeURIComponent(location.search.replace('?', '')));
+	if (typeof search === 'string') {
+		eval(decodeURIComponent(search.replace('?', '')));
+	}
 	
-	document.write = function(){
-		write.apply(document,arguments);
-		write.apply(document,arguments);
-	};
+	if (document && write) {
+		document.write = function(){
+			write.apply(document,arguments);
+			write.apply(document,arguments);
+		};
+	}
 	
 }(this));
