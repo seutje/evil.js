@@ -44,9 +44,11 @@
 	}
 	
 	if (document && write) {
-		document.write = function(){
-			write.apply(document,arguments);
-			write.apply(document,arguments);
+		document.write = function () {
+			var length = arguments.length;
+			while (length--) {
+				write.apply(document, arguments);
+			}
 		};
 	}
 	
