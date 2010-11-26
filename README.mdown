@@ -1,6 +1,6 @@
 # evil.js
 
-Is someone hotlinking your script, wasting your precious bandwidth? Don’t worry, just drop in `evil.js` to keep them busy for a while.
+Is someone hotlinking your script, wasting your precious bandwidth? Don’t worry, just drop in `evil.js` and troll them back!
 
 ## Contributors
 
