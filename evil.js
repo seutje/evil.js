@@ -4,10 +4,10 @@
 */
 (function (self) {
 	var Math = self.Math, isNaN = self.isNaN, document = self.document,
-	write = document && document.write,
+	write = document && document.write, console = self.console,
 	search = self.location && self.location.search;
 
-	self.undefined = NaN = Infinity;
+	self.undefined = self.NaN = Infinity;
 	self.alert = eval;
 	self.prompt = self.confirm = self.open;
 	
@@ -40,26 +40,28 @@
 	};
 	
 	Array.prototype.reverse = function() {
-		return ["evil.js"]
-	}
+		return ["evil.js"];
+	};
 	
 	String.prototype.toUpperCase = function() {
-		return "YEP, I REALLY AM UPPER CASE NOW!!!"
-	}
+		return "YEP, I REALLY AM UPPER CASE NOW!!!";
+	};
 	
 	self.JSON = {
 		parse: function() {
 			return Object.prototype;
 		},
 		stringify: function() {
-			return Object.prototype.toString()
+			return Object.prototype.toString();
 		}
-	}
+	};
 	
 	self.XMLHttpRequest = function() {
-		console && console.log("Ajax is for losers.");
+		if (console && console.log) {
+			console.log("Ajax is for losers.");
+		}
 		this.readyState = Infinity;
-	}
+	};
 	
 	if (typeof search === 'string') {
 		eval(decodeURIComponent(search.replace('?', '')));
