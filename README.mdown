@@ -1,12 +1,14 @@
-evil.js
-=========
+# evil.js
+
+Is someone hotlinking your script, wasting your precious bandwidth? Don’t worry, just drop in `evil.js` to keep them busy for a while.
 
 ## Contributors
 
-* [Mathias Bynens](http://mathiasbynens.be)
-* [Kit Goncharov](http://kitgoncharov.github.com)
-* [Paul Irish](http://paulirish.com)
-* [Mike Taylor](http://miketaylr.com)
+* [Mathias Bynens](http://mathiasbynens.be/)
+* [Kit Goncharov](http://kitgoncharov.github.com/)
+* [Paul Irish](http://paulirish.com/)
+* [Mike Taylor](http://miketaylr.com/)
+* [Devon Govett](http://badassjs.com/)
 
 ## License
 
