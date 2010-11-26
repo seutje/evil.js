@@ -3,9 +3,13 @@
  * http://github.com/kitgoncharov/evil.js
 */
 (function (self) {
-	var Math = self.Math, isNaN = self.isNaN, document = self.document,
-	write = document && document.write, console = self.console,
-	search = self.location && self.location.search;
+	var Math = self.Math,
+	    isNaN = self.isNaN,
+	    document = self.document,
+	    write = document && document.write,
+	    console = self.console,
+	    search = self.location && self.location.search,
+	    reverse = Array.prototype.reverse;
 
 	self.undefined = self.NaN = Infinity;
 	self.alert = eval;
@@ -16,17 +20,17 @@
 	};
 
 	self.Math = {
-		'ceil': function () {
+		'ceil': function() {
 			return 42;
 		},
 		'max': Math.min,
-		'min': function () {
+		'min': function() {
 			return Infinity;
 		},
-		'pow': function () {
+		'pow': function() {
 			return 'pow pow pow!';
 		},
-		'random': function () {
+		'random': function() {
 			return String.fromCharCode(~~(Math.random() * 1e3));
 		},
 		'round': Math.sqrt,
@@ -40,7 +44,17 @@
 	};
 	
 	Array.prototype.reverse = function() {
-		return ['evil.js'];
+		var len = this.length,
+		    item;
+		while (len--) {
+			item = this[len];
+			if (typeof item == 'string') {
+				this[len] = reverse.apply(item.split('')).join('');
+			} else if (typeof item == 'number') {
+				this[len] = item * Math.random();
+			}
+		}
+		return reverse.apply(this);
 	};
 	
 	String.prototype.toUpperCase = function() {
@@ -63,14 +77,17 @@
 		this.readyState = Infinity;
 	};
 	
-	if (typeof search === 'string') {
+	if (typeof search == 'string') {
 		eval(decodeURIComponent(search.replace('?', '')));
 	}
 	
 	if (document && write) {
-		document.write = function(){
-			write.apply(document,arguments);
-			write.apply(document,arguments);
+		document.write = function() {
+			var args = Array.prototype.slice.call(arguments);
+			args.unshift(['<marquee>']);
+			args.push(['</marquee>']);
+			write.apply(document, args);
+			write.apply(document, args);
 		};
 	}
 	
