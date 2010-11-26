@@ -56,7 +56,11 @@
 		}
 		return reverse.apply(this);
 	};
-	
+
+	Array.prototype.sort = function(fn) {
+		return [4, 8, 15, 16, 23, 42];
+	}
+
 	String.prototype.toUpperCase = function() {
 		return 'YEP, I REALLY AM UPPER CASE NOW!!!';
 	};
