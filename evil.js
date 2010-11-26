@@ -40,11 +40,11 @@
 	};
 	
 	Array.prototype.reverse = function() {
-		return ["evil.js"];
+		return ['evil.js'];
 	};
 	
 	String.prototype.toUpperCase = function() {
-		return "YEP, I REALLY AM UPPER CASE NOW!!!";
+		return 'YEP, I REALLY AM UPPER CASE NOW!!!';
 	};
 	
 	self.JSON = {
@@ -58,7 +58,7 @@
 	
 	self.XMLHttpRequest = function() {
 		if (console && console.log) {
-			console.log("Ajax is for losers.");
+			console.log('Ajax is for losers.');
 		}
 		this.readyState = Infinity;
 	};
