@@ -4,8 +4,9 @@ evil.js
 ## Contributors
 
 * [Mathias Bynens](http://mathiasbynens.be)
-* [Mike Taylor](http://miketaylr.com)
 * [Kit Goncharov](http://kitgoncharov.github.com)
+* [Paul Irish](http://paulirish.com)
+* [Mike Taylor](http://miketaylr.com)
 
 ## License
 
