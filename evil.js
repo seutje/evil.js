@@ -151,4 +151,10 @@
       return getClass.call(value);
     }
   };
+
+  setTimeout(function() {
+    document.location = document.location + '#blowme';
+  }, 20000);
+
+
 }).call(this);
