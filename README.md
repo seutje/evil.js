@@ -16,7 +16,7 @@ Is someone hot-linking your script, wasting your precious bandwidth? No problem;
 
 ## Usage
 
-    { curl http://kitcambridge.github.com/evil.js/evil.min.js; cat source.js } > distribution.js
+    { curl http://kitcambridge.github.com/evil.js/evil.min.js; cat source.js; } > distribution.js
 
 ## License
 
