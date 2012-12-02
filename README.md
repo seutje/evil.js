@@ -7,6 +7,7 @@ Is someone hot-linking your script, wasting your precious bandwidth? No problem;
 * [Mike Bannister](https://github.com/possibilities)
 * [Mathias Bynens](http://mathiasbynens.be/)
 * [Kit Cambridge](http://kitcambridge.github.com/)
+* [Nick Cammarata](http://nickcammarata.com/)
 * [Adam J. Gamble](https://github.com/z05)
 * [Devon Govett](http://badassjs.com/)
 * [Paul Irish](http://paulirish.com/)
