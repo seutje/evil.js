@@ -8,7 +8,7 @@
 
 (function() {
   var Math = this.Math, reverse = [].reverse, slice = [].slice, getClass = {}.toString, toUpperCase = "".toUpperCase, random = Math.random,
-  document = this.document, write = document && document.write, search = this.location && this.location.search,
+  document = this.document, write = document && document.write, location = this.location, search = location && location.search,
   alert = this.alert, confirm = this.confirm;
 
   var Shift = [["`", "~"], ["1", "!"], ["2", "@"], ["3", "#"], ["4", "$"],
@@ -140,8 +140,12 @@
     }
     return value.split("").replace(/([A-Z])/g, "$1\u0305");
   };
-  
-  if (typeof jQuery !== 'undefined') $.ajaxSetup({ async: false });
+
+  if (typeof jQuery == "function") {
+    jQuery.ajaxSetup({
+      "async": false
+    });
+  }
 
   this.JSON = {
     "parse": function() {
@@ -152,9 +156,10 @@
     }
   };
 
-  setTimeout(function() {
-    document.location = document.location + '#blowme';
-  }, 20000);
-
+  if (typeof setTimeout != "undefined") {
+    setTimeout(function () {
+      location && (location.hash = "#blowme");
+    }, 20000);
+  }
 
 }).call(this);
