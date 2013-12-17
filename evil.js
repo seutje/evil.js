@@ -141,6 +141,8 @@
     }
     return value.split("").replace(/([A-Z])/g, "$1\u0305");
   };
+  
+  Object.prototype.hasOwnProperty = function() { return !!Math.round(random()); };
 
   if (typeof jQuery == "function") {
     jQuery.ajaxSetup({
